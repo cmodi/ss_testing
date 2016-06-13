@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# declared constant
+###### declared constant
 declare -r NUM1=5
 
 num2=4
