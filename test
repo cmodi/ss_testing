@@ -1,0 +1,29 @@
+#!/bin/bash
+
+declare -r NUM1=5
+
+num2=4
+
+num3=$((NUM1+num2))
+
+echo $num3
+
+rand=5
+rand=$((rand+=4))
+echo $rand
+
+rand=6
+let rand+=4
+echo $rand
+
+num4=1.3
+num5=3.5
+num6=$(python -c "print $num4 + $num5")
+
+echo $num6
+cat << EOM
+sdfsdfdsfs sdfdsfdsf
+sdsfsdf
+EOM
+
+ 
