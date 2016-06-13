@@ -1,0 +1,79 @@
+#!/bin/bash
+
+fav_nums=(3.14 2.78 .5778)
+
+echo "PI: ${fav_nums[0]}"
+
+fav_nums[3]="hello"
+
+echo "4th : ${fav_nums[3]}"
+
+fav_nums+=(3 8)
+
+for i in ${fav_nums[*]}; do
+   echo $i
+done
+
+echo "Length: ${#fav_nums[4]}"
+
+sorted_nums=($(for i in "${fav_nums[@]}"; do echo $i; done | sort))
+
+unset 'sorted_nums[1]'
+
+for i in ${sorted_nums[*]}; do
+   echo $i
+done
+
+
+exit
+
+name="CM"
+
+echo "I am ${name:=Common Man}'s man";
+
+read -p "Enter your age: " age
+case $age in 
+[0-5])
+   echo "play"
+   ;;
+[0-5]i|1[5-8])
+   echo "play or enjoy in college"
+   ;;
+*)
+   echo "ggggg"
+   ;;
+esac
+
+can_vote=0
+age=16
+
+((age >= 18?(can_vote=1):(can_vote=0)))
+echo "can vote ? $can_vote"
+
+
+exit
+
+read -p "enter valid date: " date
+
+pat="^[0-9]{8}$"
+
+if [[ $date =~ $pat ]]; then
+   echo "valid date"
+else
+   echo "invalid date"
+fi
+
+OIFS="$IFS"
+
+IFS=","
+
+read -p "read tow numbers and sum: " num1 num2
+
+num1=${num1//[[:blank]]/}
+num2=${num2//[[:blank]]/}
+
+sum=$((num1+num2))
+
+echo "$num1 + $num2 = $sum"
+
+IFS="$OIFS"

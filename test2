@@ -1,0 +1,56 @@
+#!/bin/bash
+
+getSum() {
+  local num3=$1
+  local num4=$2
+
+  local sum=$((num3+num4))
+  echo $sum
+
+  return $sum
+}
+
+num1=5
+num2=4
+
+sum=$(getSum num1 num2)
+
+echo "The sum is $sum"
+
+read -p "What is your name?" name
+echo "hello $name"
+
+read -p "What is your age ?" age
+if [ $age -ge 15 ]
+then
+   echo "case1"
+elif [ $age -eq 26 ]
+then
+   echo "case2"
+else
+   echo "case3"
+fi
+
+read -p "input number: " num
+if ((num == 15)); then
+   echo "it is fifteen"
+elif ((num > 20)); then
+   echo "it is > 20"
+else 
+   echo "last"
+fi
+
+if (( $((num%2)) == 0 )); then
+ echo "hello"
+fi
+
+str1=""
+str2="hello"
+str3="world"
+
+if [ "$str2" ]; then
+  echo "not empty"
+elif [ -z "$str1" ]; then
+  echo "empty"
+fi
+
