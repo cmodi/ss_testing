@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#comment
+
 ###### declared constant
 declare -r NUM1=5
 
